@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en" dir="rtl">
+  <head>
+
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="static/regForm.css">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+
+
+
+    <!-- DatePicker -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    
+    <title>Registration Form</title>
+  </head>
+  <body>  
+    <nav class="navbar navbar-light bg-light border-bottom border-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="static/TCM_Logo-01.png" width="180" height="100%" alt="" loading="lazy">
+        </a>
+      </div>
+    </nav>
+    <div class="container">
+      <h1 class="h1 text-center"><u>רישום הורה</u></h1>
+      
+      <form class="border border-dark" action="" id="regForm">
+        <div class="form-row">
+            <div class="col-md-4" class="step">
+                <span class="display-4">1</span>
+                פרטי ההורה
+                <hr class="mt-0 mb-0 step bg-dark">
+            </div>
+            <div class="col-md-4" class="step">
+                <span class="display-4">2</span>
+                פרטי הילד
+                <hr class="mt-0 mb-0 step .bg-secondary">
+            </div>
+            <div class="col-md-4" class="step">
+                <span class="display-4">3</span>
+                העלאת מסמכים
+                <hr class="mt-0 mb-0 step .bg-secondary">
+            </div>
+        </div>
+        <div class="tab">
+            <!-- Row 1 -->
+            <div class="form-row">
+                <div class="col-md-4 justify-content-between">
+                    <label for="firstName">שם פרטי</label>
+                    <input type="text" class="form-control" placeholder="שם פרטי" id="firstName" name="firstName">
+                </div>
+                <div class="col-md-4 justify-content-between">
+                    <label for="lastName">שם משפחה</label>
+                    <input type="text" class="form-control" placeholder="שם משפחה" id="lastName" name="lastName">
+                </div>
+                <div class="col-md-4 justify-content-between">
+                    <label for="datepicker">תאריך לידה</label>
+                    <input id="datepicker" class="form-control" placeholder="תאריך לידה" name="dob">
+                </div>
+            </div>
+            <!-- Row 2 -->
+            <div class="form-row">
+                <div class="col-md-4">
+                    <label for="city">עיר</label>
+                    <input type="text" id="city" class="form-control" placeholder="עיר" name="city">
+                </div>
+                <div class="col-md-4">
+                    <label for="street">רחוב</label>
+                    <input type="text" id="street"  class="form-control" placeholder="רחוב" name="street">
+                </div>
+                <div class="col-md-2">
+                    <label for="houseNum">מספר בית</label>
+                    <input type="number" id="houseNum"  class="form-control" placeholder="מספר בית" name="houseNum">
+                </div>  
+                <div class="col-md-2">
+                    <label for="aptNum">דירה</label>
+                    <input type="number" id="aptNum"  class="form-control" placeholder="דירה" name="aptNum">
+                </div>
+            </div>
+            <!-- Row 3 -->
+            <div class="form-row align-items-end">
+                <div class="col-md-3">
+                    <label for="gender">מין</label>
+                    <select type="text" id="gender" name="gender" class="form-control" placeholder="מין">
+                        <option value="">-בחר-</option>
+                        <option value="femail">אישה</option>
+                        <option value="male">גבר</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="familyStatus">מצב משפחתי</label>
+                    <select type="text" id="familyStatus" name="familyStatus" class="form-control" placeholder="מצב משפחתי">
+                        <option value="">-בחר-</option>
+                        <option value="single">רווק/ה</option>
+                        <option value="married">נשוי/אה</option>
+                        <option value="divorced">גרוש/ה</option>
+                        <option value="widow">אלמנ/ה</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-dark form-control" id="nextBtn" onclick="nextPrev(1)">הבא</button>
+                </div>
+            </div>
+        </div>
+        <div class="tab">
+            <!-- Row 1 -->
+            <div class="form-row">
+                <div class="col-md-4 justify-content-between">
+                    <label for="firstName">שם הילד</label>
+                    <input type="text" class="form-control" placeholder="שם הילד" id="childName" name="childName">
+                </div>
+                <div class="col-md-4 justify-content-between">
+                    <label for="gender">מין</label>
+                    <select type="text" id="gender" name="gender" class="form-control" placeholder="מין">
+                        <option value="">-בחר-</option>
+                        <option value="femail">אישה</option>
+                        <option value="male">גבר</option>
+                    </select>
+                </div>
+                <div class="col-md-4 justify-content-between">
+                    <label for="childDob">תאריך </label>
+                    <input id="childDob" class="form-control" placeholder="תאריך לידת הילד" name="childDob">
+                </div>
+            </div>
+            <!-- Row 2 -->
+            <div class="form-row align-items-end">
+                <div class="col-md-4">
+                    <div class="formControlRange ">
+                        <label for="functionLvl">בחר רמת תפקוד </label>
+                        <input id="functionLvl" type="range" class="custom-range form-control"
+                        min="0" max="2" step="1" name="functionLvl" id="functionLvl" onclick="rangeChange()"/> 
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <!-- <label for="street">רחוב</label>
+                    <input type="text" id="street"  class="form-control" placeholder="רחוב" name="street"> -->
+                </div>
+                <div class="col-md-2">
+                    <!-- <label for="houseNum">מספר בית</label>
+                    <input type="number" id="houseNum"  class="form-control" placeholder="מספר בית" name="houseNum"> -->
+                </div>  
+                <div class="col-md-2">
+                    <!-- <label for="aptNum">דירה</label>
+                    <input type="number" id="aptNum"  class="form-control" placeholder="דירה" name="aptNum"> -->
+                </div>
+            </div>
+            <!-- Row 3 -->
+            <div class="form-row align-items-end">
+                <div class="col-md-3">
+                    <!-- <label for="gender">מין</label>
+                    <select type="text" id="gender" name="gender" class="form-control" placeholder="מין">
+                        <option value="">-בחר-</option>
+                        <option value="femail">אישה</option>
+                        <option value="male">גבר</option>
+                    </select> -->
+                </div>
+                <div class="col-md-3">
+                    <!-- <label for="familyStatus">מצב משפחתי</label>
+                    <select type="text" id="familyStatus" name="familyStatus" class="form-control" placeholder="מצב משפחתי">
+                        <option value="">-בחר-</option>
+                        <option value="single">רווק/ה</option>
+                        <option value="married">נשוי/אה</option>
+                        <option value="divorced">גרוש/ה</option>
+                        <option value="widow">אלמנ/ה</option> -->
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-dark form-control" id="nextBtn" onclick="nextPrev(1)">הבא</button>
+                </div>
+            </div>
+        </div>
+      </form>
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- Datepickers js -->
+    <script> $('#datepicker').datepicker({uiLibrary: 'bootstrap4'});</script>
+    <script> $('#childDob').datepicker({uiLibrary: 'bootstrap4'});</script>
+
+    <!-- form js -->
+    <script src="static/form.js" type="text/javascript"></script>
+    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>
