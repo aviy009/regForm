@@ -1,0 +1,65 @@
+form {
+    padding-right: 10%;
+    padding-left: 10%;
+}
+.form-control{
+    background-color: blanchedalmond;
+}
+.form-row{
+    text-align: right;
+    padding: 10px 0 10px 0;
+    margin: auto;
+}
+
+
+button.form-control{
+    vertical-align: bottom;
+    float: left;
+    max-width: 50%;
+}
+label{
+    font-weight: bolder;
+}
+
+h1{
+    padding-top: 1em;
+}
+
+
+form {
+    background-color: blanchedalmond;
+    margin-top: 2em;
+    padding-top: 3em;
+    margin-bottom: 2em;
+    padding-bottom: 3em;
+}
+
+.tab{
+    display: none;
+}
+
+
+/* range selector */
+input[type="range"] {
+    width: 100%;
+}
+
+p.rangeLabel {
+    font-family: "Arial", sans-serif;
+    padding: 5px;
+    margin: 5px 0;
+    background: rgb(136,136,136);
+    font-size: 15px;
+    line-height 20px;
+}
+
+p.rangeLabel:hover {
+    background-color: rgb(3, 82, 3);
+    color: #fff;
+    cursor: pointer;
+}
+
+p.rangeLabel.selected {
+    background-color: rgb(8, 173, 8);
+    color: rgb(255,255,255);
+}
